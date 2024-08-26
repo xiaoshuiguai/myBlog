@@ -1,0 +1,158 @@
+site_name: '领导驾驶舱'
+site_author: '熊能'
+site_description: '看我七十二变'
+site_url: 'https://www.xncoding.com/'
+copyright: Copyright © 2022 Hisense
+
+nav:
+- 概述: index.md
+- 指挥调度:
+  - 情:
+    - 城市概况: basic/CitySurveyNumCard.md
+    - 交通运行: basic/TrafficSituationDashBoard.md
+    - 内部交通压力: basic/TransitCarNumCard.md
+    - 进出城总数: basic/InOutCityNumCard.md
+    - 停车场数据分析: basic/ParkingLotNumCard.md
+  - 指:
+    - 警情总数: basic/PoliceCaseLineCard.md
+    - 平均出警时长: basic/PoliceCaseOutAndFinishNumCard.md
+    - 警情处理状态: basic/PoliceCaseListCard.md
+  - 勤:
+    - 警员数量: basic/right1.md
+    - 勤务评分分析: basic/DutyHotspotNumCard.md
+    - 勤务热点分析-雷达图: basic/DutyHotspotRadarChart.md
+    - 勤务热点分析-列表: basic/DutyHotspotListCard.md
+  - 督:
+    - 勤务监督: basic/DutySuperviseNumCard.md
+    - 警务监管: basic/PoliceSupervisionNumCard.md
+  - 宣:
+    - 舆情总量: basic/PreachNumCard.md
+    - 舆情分类: basic/PreachTypePieChart.md
+    - 三率: basic/Preach3RateCard.md
+  - 图层: basic/Maplayer.md
+- 车驾管: 
+  - 驾驶证业务: 
+    - 驾驶人保有量: vdm/DrvFlowCard.md
+    - 驾管业务数量: vdm/DrvFlowNumCard.md
+    - 驾考业务: vdm/DrvPreasignCard.md
+  - 业务监管: vdm/VdmPoliceSupervisionCard.md            
+  - 机动车业务: 
+    - 机动车保有量: vdm/VehFlowNumCard.md
+    - 车管业务: vdm/VehFlowCard.md
+    - 车辆查验检验业务: vdm/VehCheckCard.md
+  - 服务评价: vdm/ServiceEvaluate.md 
+  - 源头监管: 
+    - 重点驾驶人: vdm/SourceSuperviseDriverCard.md
+    - 重点机动车: vdm/SourceSuperviseVehCard.md
+    - 重点企业: vdm/SourceSuperviseCompanyCard.md
+    - 隐患治理: vdm/HiddenDangerTreatment.md
+  - 民呼我应: 
+    - 舆情量: vdm/PublicSentimentCard.md
+    - 舆情来源分类: vdm/PublicSentimentChart.md
+    - 舆情办理量: vdm/PublicSentimentDoneCard.md
+    - 舆情三率: vdm/PublicSentiment3RateCard.md
+  - 互联网服务: vdm/VdmInternetServCard.md
+  - 综合指标: vdm/VdmComprehensiveNumCard.md
+  - 图层: vdm/Maplayer.md
+- 安全:
+  - 安全态势:
+    - 安全指数+风险雷达: safe/SafeSituationRiskRadarChart.md
+    - 月安全风险区域排名: safe/SafeSituationAreaBarChart.md
+    - 月度事故态势: safe/SafeSituationAccidentNumCard.md
+  - 源头风控:
+    - 风险企业: safe/SafeSourceCompany3DPyramid.md
+    - 风险驾驶人: safe/SafeSourceDriverDashBoard.md
+    - 风险机动车: safe/SafeSourceVehDashBoard.md    
+  - 道路风控:
+    - 事故道路类型分布: safe/SafeRoadPieChart.md
+    - 道路-事故特征分布: safe/SafeRoadAccidentLabelWall.md
+  - 工作成效:
+    - 隐患治理成效: safe/SafeHiddenNumCard.md     
+    - 专项整治行动: safe/SafeSpecialNumCard.md
+    - 预防工作成效: safe/SafePreventionNumCard.md
+- 秩序:
+  - 执法态势:
+    - 执法态势分析: order/EnforceSituationMixCard.md
+    - 非现场执法: order/EnforceOffSiteCard.md
+    - 现场执法: order/EnforceOnSiteCard.md
+  - 专项整治:
+    - 道路违法查处(同安全屏): safe/SafeRoadPieChart.md
+    - 酒醉驾违法查处: order/CheckDrinkIllegalCard.md
+    - 工程车、电动车查处: order/CheckSpacialIllegalCarCard.md
+  - 过程监督:
+    - 非现场执法异常: order/OffSiteEnforceUsualCard.md
+    - 违法处理警务监管: order/EnforceWatchCard.md
+  - 勤务督导:
+    - 勤务评分分析（同指挥屏）: basic/DutyHotspotNumCard.md
+    - 勤务热点分析-雷达图（同指挥屏）: basic/DutyHotspotRadarChart.md
+    - 勤务热点分析-列表（同指挥屏）: basic/DutyHotspotListCard.md    
+- 脚本:
+  - 结构: script/DDL.md
+  - 数据: script/DML.md
+
+#主题
+theme:
+  name: 'material'
+  language: 'zh'  # 配置语言
+  palette:  # 颜色
+    primary: 'light blue'
+    accent: 'indigo'
+  feature:
+    tabs: true  # 横向导航
+  # custom_dir: 'docs/resources/'
+  font: false
+  hide:
+  - footer
+
+extra:
+  generator: false
+
+extra_javascript:
+    - js/mermaid.min.js
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+# mkdocs serve 启动服务
+
+
+
+# markdown_extensions:  
+#   - admonition  # 提示块
+#   - footnotes  # 脚注
+#   - meta  # 定义元数据，通过文章上下文控制，如disqus
+#   - pymdownx.caret  # 下划线上标
+#   - pymdownx.tilde  # 删除线下标
+#   - pymdownx.critic  # 增加删除修改高亮注释，可修饰行内或段落
+#   - pymdownx.details  # 提示块可折叠
+#   - pymdownx.inlinehilite  # 行内代码高亮
+#   - pymdownx.mark  # 文本高亮
+#   - pymdownx.smartsymbols  # 符号转换
+#   - pymdownx.superfences:
+#       custom_fences:
+#         - name: mermaid
+#           class: mermaid
+#           format: !!python/name:pymdownx.superfences.fence_code_format
+#   - codehilite:    # 代码高亮，显示行号
+#       guess_lang: false
+#       linenums: true
+#   - toc:  # 锚点
+#       permalink: true
+# #  - pymdownx.arithmatex  # 数学公式
+#   - pymdownx.betterem:  # 对加粗和斜体更好的检测
+#       smart_enable: all
+# #  - pymdownx.emoji:  # 表情
+# #      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+# #  - pymdownx.magiclink  # 自动识别超链接
+#   - pymdownx.tasklist:  # 复选框checklist
+#       custom_checkbox: true
+
+# PDF导出插件
+plugins:
+  - search
+#  - pdf-export #这个插件还有点问题，没有更新
+
+
