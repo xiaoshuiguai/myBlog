@@ -1,2 +1,8 @@
 # xiaoshuiguai.github.io
-blog
+
+发布到github-pages
+
+```bash
+mkdocs gh-deploy
+```
+
