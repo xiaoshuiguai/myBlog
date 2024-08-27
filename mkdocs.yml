@@ -92,10 +92,10 @@ nav:
 
 #主题
 theme:
-  name: 'material'
+  name: material
   language: 'zh'  # 配置语言
   palette:  # 颜色
-    primary: 'light blue'
+    primary: indigo
     accent: 'indigo'
   feature:
     tabs: true  # 横向导航
