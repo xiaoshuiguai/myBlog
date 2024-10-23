@@ -1,0 +1,5776 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="看我七十二变">
+      
+      
+        <meta name="author" content="熊能">
+      
+      
+        <link rel="canonical" href="https://www.xncoding.com/script/58/5.8-DDL/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>5.8表统计 - 领导驾驶舱</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#58" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="领导驾驶舱" class="md-header__button md-logo" aria-label="领导驾驶舱" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            领导驾驶舱
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5.8表统计
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="领导驾驶舱" class="md-nav__button md-logo" aria-label="领导驾驶舱" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    领导驾驶舱
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    指挥调度
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            指挥调度
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    情
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            情
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/CitySurveyNumCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    城市概况
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/TrafficSituationDashBoard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    交通运行
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/TransitCarNumCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    内部交通压力
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/InOutCityNumCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    进出城总数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/ParkingLotNumCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    停车场数据分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    指
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            指
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/PoliceCaseLineCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    警情总数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/PoliceCaseOutAndFinishNumCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    平均出警时长
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/PoliceCaseListCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    警情处理状态
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    勤
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            勤
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/right1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    警员数量
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/DutyHotspotNumCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    勤务评分分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/DutyHotspotRadarChart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    勤务热点分析-雷达图
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/DutyHotspotListCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    勤务热点分析-列表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    督
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            督
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/DutySuperviseNumCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    勤务监督
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/PoliceSupervisionNumCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    警务监管
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    宣
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            宣
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/PreachNumCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    舆情总量
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/PreachTypePieChart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    舆情分类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/Preach3RateCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    三率
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/Maplayer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    图层
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    车驾管
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            车驾管
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    驾驶证业务
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            驾驶证业务
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/DrvFlowCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    驾驶人保有量
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/DrvFlowNumCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    驾管业务数量
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/DrvPreasignCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    驾考业务
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/VdmPoliceSupervisionCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    业务监管
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    机动车业务
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            机动车业务
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/VehFlowNumCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    机动车保有量
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/VehFlowCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    车管业务
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/VehCheckCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    车辆查验检验业务
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/ServiceEvaluate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    服务评价
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    源头监管
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            源头监管
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/SourceSuperviseDriverCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    重点驾驶人
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/SourceSuperviseVehCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    重点机动车
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/SourceSuperviseCompanyCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    重点企业
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/HiddenDangerTreatment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    隐患治理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    民呼我应
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            民呼我应
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/PublicSentimentCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    舆情量
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/PublicSentimentChart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    舆情来源分类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/PublicSentimentDoneCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    舆情办理量
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/PublicSentiment3RateCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    舆情三率
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/VdmInternetServCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    互联网服务
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/VdmComprehensiveNumCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    综合指标
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vdm/Maplayer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    图层
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    安全
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            安全
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    安全态势
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            安全态势
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../safe/SafeSituationRiskRadarChart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    安全指数+风险雷达
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../safe/SafeSituationAreaBarChart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    月安全风险区域排名
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../safe/SafeSituationAccidentNumCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    月度事故态势
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    源头风控
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            源头风控
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../safe/SafeSourceCompany3DPyramid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    风险企业
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../safe/SafeSourceDriverDashBoard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    风险驾驶人
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../safe/SafeSourceVehDashBoard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    风险机动车
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    道路风控
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            道路风控
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../safe/SafeRoadPieChart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    事故道路类型分布
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../safe/SafeRoadAccidentLabelWall/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    道路-事故特征分布
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    工作成效
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            工作成效
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../safe/SafeHiddenNumCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    隐患治理成效
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../safe/SafeSpecialNumCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    专项整治行动
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../safe/SafePreventionNumCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    预防工作成效
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    秩序
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            秩序
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    执法态势
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            执法态势
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../order/EnforceSituationMixCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    执法态势分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../order/EnforceOffSiteCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    非现场执法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../order/EnforceOnSiteCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    现场执法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    专项整治
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            专项整治
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../safe/SafeRoadPieChart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    事故道路类型分布
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../order/CheckDrinkIllegalCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    酒醉驾违法查处
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../order/CheckSpacialIllegalCarCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    工程车、电动车查处
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    过程监督
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            过程监督
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../order/OffSiteEnforceUsualCard.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    非现场执法异常
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../order/EnforceWatchCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    违法处理警务监管
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    勤务督导
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            勤务督导
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/DutyHotspotNumCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    勤务评分分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/DutyHotspotRadarChart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    勤务热点分析-雷达图
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/DutyHotspotListCard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    勤务热点分析-列表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    脚本
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            脚本
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DDL.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DML.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数据
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ME/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="58">5.8表统计</h1>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>基础数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACD_DUTYSIMPLE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ACD_DUTYSIMPLEHUMAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ACT_GE_PROPERTY</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>ADVANCE_DIRECT_HISTORY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ADVANCE_POLICE_GROUP</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ADVANCE_SCENE_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ADVANCE_VIDEO_PLAN_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ADVANCE_VMS_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ALERTEVENT_CONFIG</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ALERTEVENT_DUTY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ALERTEVENT_PARAM</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>ANLYS_INTS_STATUS_DATA_15MI</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ANLYS_INTS_STATUS_DATA_30MI</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ANLYS_INTS_STATUS_DATA_DAY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ANLYS_INTS_STATUS_DATA_HOUR</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ANLYS_MONITOR_POINT_INOUT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ANLYS_SG_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ANLYS_SG_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>AN_SECTION_STATUS_COMPUTE_AVG</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>AN_SECTION_STATUS_DATA_AVG1</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>AREA_MAINTENANCE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_ALERT_CONFIG</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>BLACK_ALERT_CONFIG_TEMPLET</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_ALERT_COUNT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_ALERT_FEEDBACK</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_ALERT_FRONT_CHANNEL</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_ALERT_FRONT_CONFIG</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_ALERT_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_ALERT_MID_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_ALERT_PARK</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_ALERT_POINT_COUNT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_ALERT_USER_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_ALERT_WIGHT_CAR</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_CONFIG_LEVEL_TEMPLET</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_CONFIG_POINT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_CONFIG_POINT_DIRECTION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_CONFIG_POINT_TEMPLET</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_CONTROL_AUDIT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_HIDDENDANGER_DRIVER</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_LIST_MANAGE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_LIST_MANAGE_RECORD</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_LIST_MAPPING</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_LOW_ANALYSIS_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_LOW_ANALYSIS_MID_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_POINT_DIRECTION_TEMPLET</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_SEARCHPIC_FEATURE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_SEARCHPIC_RESULT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_SEARCHPIC_TASK</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BURST_EVENT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>BURST_EVENT_PRE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>CJDB_SJ</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>CLIENT_LOGINFAIL_HISTORY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>COMMON_POSITION_PRESET</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>COMM_DESCRIPTION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>CONSTRUCTION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>CONTROL_TYPE_PARAM</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>CUSTOMED_AREA_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>CUSTOMED_CONFIG_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DEPARTMENT</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>DEPARTMENT_AREA_GEOMETRY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DETECT_SPEED_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DEVICE_CONCRETETYPE_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DEVICE_SECTION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DIGROAD</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DISTRICT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_ASSESS_RESULT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_ASSESS_RESULT_HEAP</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_ASSESS_RESULT_HISTORY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_ASSESS_RESULT_SCORE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_ASSESS_RESULT_SCORE_HEAP</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_ASSESS_RESULT_SCORE_HISTORY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_CHECK_APPEAL</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_CHECK_DATE_AGAIN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_CHECK_MANAGE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_COMPREHENSIVE_MONITOR</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_COMPREHENSIVE_MONITOR_DAY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_DEPLOY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_DEPLOY_CYCLE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_DEPLOY_HOLIDAY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_DEPLOY_POLICE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_DEPLOY_POLICE_DURATION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_DEPLOY_SELECT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_DURATION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_DUTY_TIME</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_GPS_MONITOR</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_GRADE_DUTY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_GRADE_DUTY_RATIO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_IMPORTANT_POSITION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_INDEXTREE_CONFIG</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>DM_INDEX_CALCULATE</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>DM_INDEX_STRATEGY</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>DM_INDEX_STRATEGY_CONFIG</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>DM_INDEX_VARIABLE</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>DM_INFO_RECORD</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_INTERSECTION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_LEAVE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_MONITOR</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_PARAM_DEFINE</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>DM_PARAM_VALUE</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>DM_POLICE_ASSIGN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_POLICE_CAR_MANAGE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_POLICE_CASE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_POLICE_CASE_SYN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_POSITION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_POSITION_CAR</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_POSITION_PERSON</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_POSITION_RESPONSIBLE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_PUSH_RECORD</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_REMIND_MANAGE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_ROAD</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_SD_GRID</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_SD_POLICECASE_RELATION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_STRATEGY</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>DM_SYS_DUTY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DM_TOOL</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DTPMS_EXPERTSYSTEM_UTCACTIONS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DTPMS_POLICE_CASE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DVS_CARNUM_ONWAY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DVS_GS_CARNUM_ONWAY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DVS_INDEX_CONFIG</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DVS_INOUTCITY_FLOW</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>DVS_INOUTGS_FLOW</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DVS_MAP</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>DVS_THEME</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>EMERGENCY_RESOURCES_MANAGE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ENUM_DEFINE</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>ENUM_TYPE</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>EQUIPMENT_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIPMENT_INFO_STATE_HISTORY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIPMENT_STATE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_CALIBRATION_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_CALIBRATION_WARN_PERSON</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_FAULT_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_FAULT_PHENOMENON</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_FAULT_REASON</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_INSPECTION_CONFIG</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_INSPECTION_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_INSPECTION_RECORD</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_INSPECTION_TASK</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_LINK</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_MAINTAIN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_MAINTAIN_KNOWLEDGE_LIB</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_MAINTAIN_PARTS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_MAINTAIN_TRACKING_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_MARK</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_OPERATE_LOG</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_SERVICE_LEVEL</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>EQUIP_SERVICE_PROVIDER</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_SERVICE_PROVIDER_SMS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_UTC_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_UTC_VIDEO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_VIDEO_PRESET</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EXCEPTION_OFFER</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>EXPERT_HISTORY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>FACI_GEOMETRY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>FACI_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>FACI_ONEWAYTRAFFIC</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>FACI_PROJECT</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>FACI_SORT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>FACI_SPEC</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>FACI_VEHICLEPARK</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>FAKENOCARS_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>FAKENOCARS_PROOF</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>FKDB_SJ</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>FXYP_CROSS_DEVICE_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>FXYP_FLOATCAR_ANALYSIS_RESULT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>FXYP_FLOAT_CAR_STATUS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>FXYP_HRV_CONCERN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>FXYP_HRV_CONCERN_ROAD_RELATION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>FXYP_PROGRAM_MANAGE_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>FXYP_SECTION_DEVICE_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>GAODE_POI_POINT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>GPS_CURRENT_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>GPS_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>GUARD_DUTY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>GUARD_DUTY_LINE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>GUARD_DUTY_LINE_POSITION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>GUARD_DUTY_LINE_UTC</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>GUARD_DUTY_LINE_VIDEO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>HDVIEW_COMPONENT</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>HDVIEW_SCENE</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>HDVIEW_THEME</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>HDVIEW_THEME_CONFIG</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>HIGHSPEED_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>HIMAP_TOKEN</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>HRV_CONCERN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>HRV_CONCERN_SECTION_RELATION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>HRV_DEPARTMENT</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>HRV_ECHARTS_TIME</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>HRV_FREEFLOWSPEED</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>HRV_INOUTCITY_FLOW</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>HRV_MAPLAYER</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>HRV_MONITOR_AREA_REGULAR_NUM</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>HRV_MONITOR_CAR_BELONGING</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>HRV_MONITOR_CAR_ONWAY</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>HRV_ROAD_NET_HUB</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>HRV_SECTION_BASE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>HRV_SECTION_STATUS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>HRV_TRAFFICWARN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_COERCIVEMEASURES</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_COFENCE_WARNING</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_DATA_EXEMPTION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_DATA_GEOMETRY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_DATA_MILITARY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_DEVICE_WARNING</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_ENFORCE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_EXCEPTION_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_EXEMPTION_ADDRESS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_EXEMPTION_BASEINFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_EXEMPTION_CARINFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_EXEMPTION_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_INTERVEL_VELOCITY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_MANUALFORENSICS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_PERSONTIME</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_RELIEF_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_SUM_DAY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_SUM_HOURS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_SYXZGROUP</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_TJEXEMPTION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ILLEGAL_VEHINFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>IMPORTANT_SCENERY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>INFO_ACCIDENTNM</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>INTERSECTION_STATUS_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>IP_WHITE_LIST</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>IST_DRVPERSON</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>IST_FUGITIVE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>IST_MDS_DISPATCHERUSER</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>IST_PEOPLEBASE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>IST_PUSH_RECEIPT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>IST_SIT_ENFORCEMENT_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>IST_STOLENCAR</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>IST_ZFDEPT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>JJDB_SJ</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>LAYER_TYPE</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>LEG_WRECKER_POINT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>LOCK_USERS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>LOGIN_RESTRICT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>LOG_CONTENT</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>LOG_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>LOW_ANALYSIS_MAP_GEOMETRY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>LOW_ANALYSIS_RELATION</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>MAINTAIN_DISPATCH_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>MAIN_ROAD</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>MAJORCAR_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>MANCONSTRA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>MENU</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>METEOROLOGY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>MONITORPOINT_MARK</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>MONITOR_POINT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>MONITOR_POINT_GEOMETRY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>MONITOR_POINT_INOUT_GS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>MONITOR_POINT_TRAVTIMESET</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>MONITOR_SECTION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>MONITOR_SECTION_POINT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>MONITOR_SECTION_POSITIONS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>NLV_VIOACTION_LOCAL</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ONEKEYREADY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ONEKEYREADY_PREDAY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>OPERATE_COMPONENT</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>OPERATOR</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>OPERATOR_LOG</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>OPERATOR_ROLE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>OTHERPLACE_VEH</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PARKBERTH_MAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PARKINGSPACE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PASSINOUT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PASS_MGR_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PEH_POLICEEXPRESSWAY_VMS_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PEH_POLICEFOG_MODELS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PEH_POLICE_EMERGENCY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PEH_POLICE_FOG_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PEH_POLICE_PROPAGANDA_ELEMENT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PEH_POLICE_PROPAGANDA_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PEH_POLICE_VMS_CONFIG</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PEH_POLICE_VMS_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PEH_POLICE_VMS_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>POLICE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>POLICE_CASE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>POLICE_CASE_GEOMETRY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>POLICE_CASE_VMS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>POSITION_COLOR</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_ACCIDENT_CARS</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>PSD_ACCIDENT_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_AUTORIZATION_CONFIG</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_AUTORIZATION_CONFIG_DETAIL</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_DUTY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_EXPRESSWAY_VMS_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_FOG_MODELS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_FOG_MODELS_BACKUP</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_FOG_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_ORDER</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_ORDER_ATTACHMENT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_ORDER_RECEIVER</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_POLICECASE_LOG</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_POST_RESOURCE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_PRESET</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_PRESET_DETAIL</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_PROCESS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_PROPAGANDA_ELEMENT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_PROPAGANDA_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_SCENE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_SHIFT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>PSD_SYS_PARAMS</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>PSD_TEMPLATE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>REGULAR_CAR</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROAD</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROADNET_MONITOR_POINT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROADNET_POINT_RELATION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROAD_ACCIDENT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROAD_JAM</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROAD_ROUND</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROAD_TRAFFIC</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROLE</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>ROLE_OPERATION_RELATION</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>ROLE_RESOURCE_RELATION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROUTE_ARC</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROUTE_FORBIDDENTURN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROUTE_INTERSECTION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROUTE_JOINPOINT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROUTE_LANE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROUTE_LANE_RELATIONS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROUTE_NODE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROUTE_NODE_RELATIONS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROUTE_ROAD</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROUTE_ROADLINE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROUTE_ROADLINK</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROUTE_SECTION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROUTE_UTC_SECTION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>ROUTE_VIO_INTS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SCREEN_MODES</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SEARCHTRACKING</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SECTION_COMPUTER_30MIN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SECTION_COMPUTER_DAY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SECTION_COMPUTER_HOUR</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SECTION_CONGESTION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SECTION_DEVICE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SECTION_FLOW_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SECTION_FLOW_DATA_SUM5</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SECTION_JAM_LENGTH</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SECTION_STATUS_COMPUTE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SECTION_STATUS_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SECTION_STATUS_DATA_VERIFY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SECTION_STATUS_PRESENT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SECTION_USUALCONGESTIONMGR</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SERVER_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SMG_DRIVER</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SMG_VEHINFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SMS_ACCESS_TOKEN</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>SMS_CONTACT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SMS_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SMS_DETAIL</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SMS_MSG_ACCESS_TOKEN</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>SMS_MULT_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SMS_SEND_RULE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>STATISTIC_ROLE_RELATION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>STATUS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>STAT_ILLEGAL_BEHAVIOR_DEPT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>STAT_ILLEGAL_BEHAVIOR_DEPT1</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>STAT_ILLEGAL_BEHAVIOR_OPER</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SVGEDITINFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SVMS_ALARMINFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SVMS_DRIVERINFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SVMS_VEHINFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SVMS_VEHOWNER</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SVMS_VEH_APPROVAL_HIS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SVMS_VEH_DRIVER</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SVMS_VEH_PASSINFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SVMS_VEH_PASS_INFO_ROUTE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SVMS_VEH_PASS_ROUTE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SVMS_VEH_ROUTE_DEVICE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SYSPARAMS</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>SYS_ONLINEUSERINFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>SYS_PERSONALINFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TD_TRAVELSPEED_RESULT_NEW</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TEMPLATE_ELEMENT_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TEMPLATE_ELEMENT_VALUE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TGS_VMS_ELEMENT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TGS_VMS_ELEMENT_LIST</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TGS_VMS_ELEMENT_RE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TGS_VMS_GROUP_LIST</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>TGS_VMS_LISTELEMENT_RE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TGS_VMS_SCHEDULE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TGS_VMS_SCHEDULE_HIS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TGS_VMS_SCHEDULE_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TGS_VMS_SCHEDULE_PLAN_HIS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TGS_VMS_SHOWLIST</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TGS_VMS_SOLULIST_RE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TGS_VMS_SOLUTION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TJ_6IN1IMP_ILLEGAL_DATA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TJ_OWNERSTATUS_HISTORY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TJ_SVMS_NOTICEINFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TJ_SVMS_REGULARINSPECT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TJ_SVMS_VISITFEEDBACKLIST</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TJ_SVMS_VISITLIST</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TOC_LIMIT_RULES</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TOC_LIMIT_TYPE</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>TOC_LIMIT_TYPE_RELATION_CAR</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>TPMS_AREA</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_DUTY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_DUTY_POLICE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_EVALUATION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_EXCT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_EXCT_CMD</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_EXCT_OPER</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_EXCT_OPER_DETAIL</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_EXCT_SCENE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_EXPRESSWAY_VMS_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_FIELD</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_FILE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_FOG_MODELS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_FOG_MODELS_BACKUP</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_FOG_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_PLAN_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_POLICE_SUPERVISION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_PRESETCMD</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>TPMS_PROPAGANDA_ELEMENT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_PROPAGANDA_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_RELATE_DEVICE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_SCENE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_TEMPLATE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_UTC_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_VIDEO_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_VMS_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_VMS_PLAN_BACKUP</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TRAFFIC_EXPONENT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TRAFFIC_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TRAFFIC_STATISTICS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TRAFFIC_STATISTICS_ROAD</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TRAFFIC_STATISTICS_ROAD_EM</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>TS_SPEED_HIERARCHY_DEVICE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>T_TJSJTBPTGX_EVN_CJD</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>T_TJSJTBPTGX_EVN_FKD</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>T_TJSJTBPTGX_EVN_JJD</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>T_USER_LOGIN_HISTORY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>USER_DOWNLOAD_VIDEO_PATH</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>USER_FAVOR_LAYER</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>USER_HOTKEY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>USER_LOGINFAIL_HISTORY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>USER_ROLE_RELATION</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>UTC_CONTROL_RECORD</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VEHICAL_RUN_ROUTE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VEHICLE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VEHICLE_BRAND</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VEHICLE_TYPE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VEH_CODE</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>VEH_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VIDEOLINE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VIDEOORDER</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VIDEO_LINE_ASSORTMENT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VIDEO_PATROL_DETAIL</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VIDEO_PATROL_DUTY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VIDEO_RECOMMEND</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VIDEO_RECOMMEND_STATISTICS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VIDEO_RECOMMEND_TIMES</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VIO_CODEROAD</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VIO_CODEROAD_GEOMETRY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VIO_ROADCROSS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VIO_ROAD_APPLY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VIO_ROAD_HANDOVER</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VIO_ROAD_MAINTANCE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VIO_ROAD_SUGGESTION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMSIMAGE_SECTIONS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_COMMON_GROUP</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>VMS_CURRENT_PUBCAN_STATUS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_DEFAULT_PROGRAM</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_ELEMENT_TYPE</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>VMS_EXPRESSWAY_DEFAULT_ELEMENT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_EXPRESSWAY_ELEMENT_GROUP</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_EXPRESSWAY_ELEMENT_LANE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_EXPRESSWAY_GROUP</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>VMS_EXPRESSWAY_GROUP_DEVICE</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>VMS_GROUP_DEVICE</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>VMS_IMAGE_RELATION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_LOG</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_LOG_ELEMENT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_OPEN_CYCLE</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>VMS_OPEN_MESSAGE</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>VMS_OPEN_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_PLAN</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_PLAN_HIS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_PRESET_ELEMENT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_PRESET_ELEMENT_ILL</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_PUB_CYCLE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_PUB_DEFAULT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_ROAD_STATUS_MONOPOLY</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_ROAD_STATUS_MONOPOLY_INFO</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_ROAD_VIDEO_RELATION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_SECTIONS</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_SECTION_EVENT_SET</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_SECTION_TEXT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_SHOWCONTENT</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_SHOWLIST</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VMS_STATUS_CHECK</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>VMS_VIDEO_RELATION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>VOCATION</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>WBC_CHARTS</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>WBC_FAST_MENU</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>WBC_MENU_CHART_RELATION</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>WBC_NOTICES</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>WBC_NOTICES_USERS</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>WBC_NOTICE_INFO</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>WBC_TODOS_TYPE</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>WBC_TODOS_USERS</td>
+<td>TABLE</td>
+<td>是</td>
+</tr>
+<tr>
+<td>WBC_USER_CHART</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>WBC_USER_THEME</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>WECHAT_PUB_FEEDBACK</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>WHITELIST</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>WORKLOADSOURCE</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>YELLO_SIGN_CAR</td>
+<td>TABLE</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_ALERT_FRONT_CONFIG_SEQ</td>
+<td>SEQUENCE</td>
+<td></td>
+</tr>
+<tr>
+<td>CONSTRUCTION_ID_SEQ</td>
+<td>SEQUENCE</td>
+<td></td>
+</tr>
+<tr>
+<td>CONSTRUCTION_SEQ</td>
+<td>SEQUENCE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_SERVICE_LEVEL_SEQ</td>
+<td>SEQUENCE</td>
+<td></td>
+</tr>
+<tr>
+<td>EQUIP_SERVICE_PROVIDER_SMS_SEQ</td>
+<td>SEQUENCE</td>
+<td></td>
+</tr>
+<tr>
+<td>LV_DIRVER_SEQ</td>
+<td>SEQUENCE</td>
+<td></td>
+</tr>
+<tr>
+<td>LV_NLV_VIOLATION_SEQ</td>
+<td>SEQUENCE</td>
+<td></td>
+</tr>
+<tr>
+<td>LV_VEHICLE_SEQ</td>
+<td>SEQUENCE</td>
+<td></td>
+</tr>
+<tr>
+<td>PASS_MGR_SEQ</td>
+<td>SEQUENCE</td>
+<td></td>
+</tr>
+<tr>
+<td>SEQ_BLACK_LIST_MANAGE_RECORD</td>
+<td>SEQUENCE</td>
+<td></td>
+</tr>
+<tr>
+<td>SEQ_MONITOR_SECTION_POINT</td>
+<td>SEQUENCE</td>
+<td></td>
+</tr>
+<tr>
+<td>SEQ_TD_TRAVELSPEED_RESULT_NEW</td>
+<td>SEQUENCE</td>
+<td></td>
+</tr>
+<tr>
+<td>STAT_TRAFFIC_FLOW_DAY_SEQ</td>
+<td>SEQUENCE</td>
+<td></td>
+</tr>
+<tr>
+<td>STAT_TRAFFIC_FLOW_HOUR_SEQ</td>
+<td>SEQUENCE</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_LOW_ANALYSIS_DATA_VIEW</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>CAR_GPS_STATUS_VIEW</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>CONFIG_CROSSING</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>CONFIG_ORG</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>CONFIG_ROADS</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>DETECT_SPEED_DATA_HAIBO_VIEW</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>GPS_NEW_DATA</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>gps_data_now</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>GPS_REAL_DATA</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>GPS_STATUS_VIEW</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>HRV_GPS_DDM_VIEW</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>HRV_GPS_VIEW</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>HRV_GPS_VIEW_LASTED</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>HRV_SECTION_STATUS_VIEW</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>POLICE_GPS_RELATION_VIEW</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>POLICE_STATUS_VIEW</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>SECTION_STATUS_CURRENT</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>SECTION_STATUS_PRESENT_VIEW</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>SECTION_STATUS_VIEW</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>SECTION_VOLUME_VIEW</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>SYSTEM_OPERATOR</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>TPMS_POLICE_DEVICE</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>VEHICLE_BRAND_MAIN_SUB</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>VEH_INFO_LOCAL</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>VEH_INFO_VIEW</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>VEH_XH_VIEW</td>
+<td>VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ADVANCE_SUPPORT_PKG</td>
+<td>PACKAGE</td>
+<td></td>
+</tr>
+<tr>
+<td>DATA_ANALYSIS_PKG</td>
+<td>PACKAGE</td>
+<td></td>
+</tr>
+<tr>
+<td>DUTY3_AUDIT_AUTO_PKG</td>
+<td>PACKAGE</td>
+<td></td>
+</tr>
+<tr>
+<td>DUTY3_AUDIT_AUTO_PKG2</td>
+<td>PACKAGE</td>
+<td></td>
+</tr>
+<tr>
+<td>DUTY3_SUPPORT_PKG</td>
+<td>PACKAGE</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TABLETYPE</td>
+<td>TYPE</td>
+<td></td>
+</tr>
+<tr>
+<td>TT_06_AUTOREF_OID_COLL_TYPE</td>
+<td>TYPE</td>
+<td></td>
+</tr>
+<tr>
+<td>ZH_CONCAT_IM</td>
+<td>TYPE</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>FORMAT_TIME</td>
+<td>FUNCTION</td>
+<td></td>
+</tr>
+<tr>
+<td>F_TRANS_PINYIN_CAPITAL</td>
+<td>FUNCTION</td>
+<td></td>
+</tr>
+<tr>
+<td>F_TRANS_PINYIN_CAPITAL_H</td>
+<td>FUNCTION</td>
+<td></td>
+</tr>
+<tr>
+<td>GETEXPIRATEDAYS</td>
+<td>FUNCTION</td>
+<td></td>
+</tr>
+<tr>
+<td>GET_BURSTEVENT_DUTYTIME</td>
+<td>FUNCTION</td>
+<td></td>
+</tr>
+<tr>
+<td>GET_DEVICE_NAME</td>
+<td>FUNCTION</td>
+<td></td>
+</tr>
+<tr>
+<td>GET_PREBYDEVICEID</td>
+<td>FUNCTION</td>
+<td></td>
+</tr>
+<tr>
+<td>GPS_OFFSET_LENGTH</td>
+<td>FUNCTION</td>
+<td></td>
+</tr>
+<tr>
+<td>REGEXP_LIKE_NUMBER</td>
+<td>FUNCTION</td>
+<td></td>
+</tr>
+<tr>
+<td>REGEXP_LIKE_NUMBER_COMP</td>
+<td>FUNCTION</td>
+<td></td>
+</tr>
+<tr>
+<td>ROADLENGTHINEREA</td>
+<td>FUNCTION</td>
+<td></td>
+</tr>
+<tr>
+<td>SPLIT</td>
+<td>FUNCTION</td>
+<td></td>
+</tr>
+<tr>
+<td>ZH_CONCAT</td>
+<td>FUNCTION</td>
+<td></td>
+</tr>
+<tr>
+<td>ADDCONTROLTYPE</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>ADDCONTROLTYPEINIT</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>ALERT_ANALYSIS_MIDDLE_DATA</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>ANALYSIS_SUM5_SECTION_FLOW_PRO</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>ANALYSIS_SUM_CROSS_FLOW_PRO</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>ANALYSIS_SUM_SECTION_FLOW_PRO</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>ANLYS_HIGHSECTION_COMPUTE_PRO</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>ANLYS_KAKOU_FLOW_PRO</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>APROC1</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>APROC2</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>ARRANGE_ALERT_POINT_COUNT</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>ARRANGE_BLACK_ALERT_COUNT</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>ARRANGE_LOW_ANALYSIS</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>ARRANGE_LOW_ANALYSIS_MONTH</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>BLACK_LIST_MANAGE_RECORD_DEL</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>CHANGECONTROLTYPE</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>CONTROLTYPEINIT</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>DELETECONTROLTYPE</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>DEL_NOUSE</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>GETUPDATETIME_TEST</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>IMPORTBLACKLIST</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>INSERT_INTO_TRAFFIC_STATISTICS</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>INSPECTACCOUNTMIDDLEDATA</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>PASS_MGR_INFO_PRO</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>PROC_DROP_DETECT_PATITION</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>PROC_DSD_SUM</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>PROC_DVS_CARNUM_ONWAY_SUM</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>PROC_DVS_GS_CARNUM_ONWAY_SUM</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>PROC_DVS_INOUTCITY_FLOW_SUM</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>PROC_DVS_INOUTGS_FLOW_SUM</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>PROC_GS_DROPOVERDUEDATA</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>PROC_HRV_CARNUM_ONWAY_SUM</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>PROC_IDG_SUM</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>PROC_INOUTCITY_SUM</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>PROC_PCG_SUM</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>PROC_PC_SUM</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>PROC_SSC_AVG_PRE</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>PROC_SSD_AVG_PRE</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>PROC_SSD_AVG_PRE2</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>RSEQ</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>STAT_ILLEGAL_DEPT_PRO_NEW</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>STAT_ILLEGAL_OPER_PRO</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>UPDATE_LOW_ANALYSIS_RELATION</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>WORKLOAD_STAT_BY_DEPT</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td>ZONGDUI_CJG_IMPORT</td>
+<td>PROCEDURE</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ZH_CONCAT_IM</td>
+<td>TYPE BODY</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TRIGGER_BLACK_LIST_INSERT</td>
+<td>TRIGGER</td>
+<td></td>
+</tr>
+<tr>
+<td>TRIGGER_BLACK_LIST_UPDATE</td>
+<td>TRIGGER</td>
+<td></td>
+</tr>
+<tr>
+<td>TRIGGER_FRONT_CONFIG_DELETE</td>
+<td>TRIGGER</td>
+<td></td>
+</tr>
+<tr>
+<td>TRIGGER_FRONT_CONFIG_INSERT</td>
+<td>TRIGGER</td>
+<td></td>
+</tr>
+<tr>
+<td>TRIGGER_FRONT_CONFIG_UPDATE</td>
+<td>TRIGGER</td>
+<td></td>
+</tr>
+<tr>
+<td>TR_SEC_SSD</td>
+<td>TRIGGER</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JOB_INSPECTACCOUNTMIDDLEDATA</td>
+<td>JOB</td>
+<td></td>
+</tr>
+<tr>
+<td>JOB_IMPORTBLACKLIST</td>
+<td>JOB</td>
+<td></td>
+</tr>
+<tr>
+<td>JOB_arrange_alert_point_count</td>
+<td>JOB</td>
+<td></td>
+</tr>
+<tr>
+<td>JOB_arrange_black_alert_count</td>
+<td>JOB</td>
+<td></td>
+</tr>
+<tr>
+<td>JOB_HRV_CARNUM_ONWAY_SUM</td>
+<td>JOB</td>
+<td></td>
+</tr>
+<tr>
+<td>JOB_HRV_CARNUM_ONWAY_SUM</td>
+<td>JOB</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>index_area</td>
+<td>view</td>
+<td></td>
+</tr>
+<tr>
+<td>index_road_index</td>
+<td>view</td>
+<td></td>
+</tr>
+<tr>
+<td>index_area_index</td>
+<td>view</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>dblink hiatis</p>
+<div class="highlight"><pre><span></span><code><span class="c1">--需要建立与信息服务的dblink名为hiatis</span>
+<span class="k">create</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">replace</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">index_area</span><span class="w"> </span><span class="k">as</span>
+<span class="k">select</span><span class="w"> </span><span class="ss">&quot;ID&quot;</span><span class="p">,</span><span class="ss">&quot;AREA_ID&quot;</span><span class="p">,</span><span class="ss">&quot;AREA_NAME&quot;</span><span class="p">,</span><span class="ss">&quot;TYPE&quot;</span><span class="p">,</span><span class="ss">&quot;ORDER_NUMBER&quot;</span><span class="p">,</span><span class="ss">&quot;CREATOR&quot;</span><span class="p">,</span><span class="ss">&quot;CREATION_TIME&quot;</span><span class="p">,</span><span class="ss">&quot;MODIFIER&quot;</span><span class="p">,</span><span class="ss">&quot;MODIFICATION_TIME&quot;</span><span class="p">,</span><span class="ss">&quot;PANA_CODE&quot;</span><span class="p">,</span><span class="ss">&quot;HIATMP_CODE&quot;</span><span class="p">,</span><span class="ss">&quot;OPEN_FLG&quot;</span><span class="p">,</span><span class="ss">&quot;INDUCTION_FLG&quot;</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">index_area</span><span class="o">@</span><span class="n">hiatis</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+
+<span class="c1">--需要建立与信息服务的dblink名为hiatis</span>
+<span class="k">create</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">replace</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">index_road_index</span><span class="w"> </span><span class="k">as</span>
+<span class="k">select</span><span class="w"> </span><span class="ss">&quot;ID&quot;</span><span class="p">,</span><span class="ss">&quot;ROAD_ID&quot;</span><span class="p">,</span><span class="ss">&quot;INDEY&quot;</span><span class="p">,</span><span class="ss">&quot;INDEY_FLOAT&quot;</span><span class="p">,</span><span class="ss">&quot;SPEED&quot;</span><span class="p">,</span><span class="ss">&quot;INSERT_TIME&quot;</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">index_road_index</span><span class="o">@</span><span class="n">hiatis</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+
+<span class="c1">--需要建立与信息服务的dblink名为hiatis</span>
+<span class="k">create</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">replace</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">index_area_index</span><span class="w"> </span><span class="k">as</span>
+<span class="k">select</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">area_id</span><span class="p">,</span><span class="n">t</span><span class="p">.</span><span class="n">indey</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">exp</span><span class="p">,</span><span class="n">t</span><span class="p">.</span><span class="n">indey_float</span><span class="p">,</span><span class="n">t</span><span class="p">.</span><span class="n">speed</span><span class="p">,</span><span class="n">t</span><span class="p">.</span><span class="n">insert_time</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">time</span>
+<span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">index_area_index</span><span class="o">@</span><span class="n">hiatis</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">insert_time</span><span class="w"> </span><span class="k">desc</span><span class="p">;</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2022 Hisense
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="../../../js/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
