@@ -171,9 +171,9 @@ nav:
     - 文章:
       - ESSAY/Articles/240411-homeinn-experiences.md
   - 转载:
-    - REPRODUCE/index.md
-    - 演讲:
-      - REPRODUCE/speech/tim-cook-at-duke.md
+    - CHILED/index.md
+    - 年龄段:
+      - CHILED/age/3-6years-old.md
     - 摘录:
       - REPRODUCE/book/harford-occupation-choice.md
       - REPRODUCE/book/the-long-view.md
@@ -349,3 +349,5 @@ extra_css:
   - mkdocs/css/no-footer.css
   # 无序列表符号自定义
   - mkdocs/css/unordered-list-symbols.css
+  - stylesheets/vue.css
+  - stylesheets/fonts.css
