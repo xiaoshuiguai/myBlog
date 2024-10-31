@@ -44,28 +44,6 @@ $$	x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
 | Phone     |   12 USD |  12  |
 | Pipe      |    1 USD | 234  |
 
-### 流程图
-```flow
-st=>start: Start
-e=>end
-op=>operation: My Operation
-cond=>condition: Yes or No?
-
-st->op->cond
-cond(yes)->e
-cond(no)->op
-```
-
-以及时序图:
-
-```sequence
-Alice->Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob-->Alice: I am good thanks!
-```
-
-> **提示：**想了解更多，请查看**流程图**[语法][3]以及**时序图**[语法][4]。
-
 ### 复选框
 
 使用 `- [ ]` 和 `- [x]` 语法可以创建复选框，实现 todo-list 等功能。例如：
@@ -75,6 +53,213 @@ Bob-->Alice: I am good thanks!
 - [ ] 待办事项2
 
 > **注意：**目前支持尚不完全，在印象笔记中勾选复选框是无效、不能同步的，所以必须在**马克飞象**中修改 Markdown 原文才可生效。下个版本将会全面支持。
+
+
+!!! note "Phasellus posuere in sem ut cursus"
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+    massa, nec semper lorem quam in massa.
+
+
+!!! danger "Phasellus posuere in sem ut cursus"
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+    massa, nec semper lorem quam in massa.
+
+
+## mermaid语法
+
+### 一、流程图语法
+
+graph 指定流程图方向：
+
+- graph LR 横向，graph TD 纵向
+
+元素的形状定义：
+
+- id[描述] 以直角矩形绘制id(描述) 以圆角矩形绘制
+- id{描述} 以菱形绘制
+- id>描述] 以不对称矩形绘制
+- id((描述)) 以圆形绘制
+
+线条定义：
+
+- A-->B 带箭头指向
+
+- A---B 不带箭头连接
+
+- A-.-B 虚线连接
+
+- A-.->B 虚线指向
+
+- A==>B 加粗箭头指向
+
+- A--描述---B 不带箭头指向并在线段中间添加描述
+
+- A--描述-->B 带描述的箭头指向
+
+- A-.描述.->B 带描述的虚线连指向
+
+- A==描述==>B 带描述的加粗箭头指向
+
+子流程图定义subgraph titlegraph directionend
+
+示例：
+
+```
+graph LR
+A(开始)-->B(起床)
+B --天气不好--- C>干活]
+C ==> D{休息时间到了}
+D -.yes.-> E((休息))
+D -.no.-> C
+E --> F(吃饭)
+```
+
+
+
+```mermaid
+graph LR
+A(开始)-->B(起床)
+B --天气不好--- C>干活]
+C ==> D{休息时间到了}
+D -.yes.-> E((休息))
+D -.no.-> C
+E --> F(吃饭)
+```
+
+
+
+### 二、时序图语法
+
+基本语法：
+
+- Title:标题 ：指定时序图的标题
+
+- Note direction of 对象:描述 ： 在对象的某一侧添加描述，direction 可以为 right/left/over ， 对象 可以是多个对象，以 , 作为分隔符
+
+- participant 对象 ：创建一个对象
+
+- loop...end ：创建一个循环体
+
+- 对象A->对象B:描述 ： 绘制A与B之间的对话，以实线连接
+  -  -> 实线实心箭头指向
+  -  --> 虚线实心箭头指向
+  - ->> 实线小箭头指向
+  - -->> 虚线小箭头指向
+
+
+
+开头使用关键字 sequenceDiagram 指明，
+
+列子：
+
+```
+sequenceDiagram
+  autonumber
+  Alice->>John: Hello John, how are you?
+  loop Healthcheck
+      John->>John: Fight against hypochondria
+  end
+  Note right of John: Rational thoughts!
+  John-->>Alice: Great!
+  John->>Bob: How about you?
+  Bob-->>John: Jolly good!
+```
+
+
+
+``` mermaid
+sequenceDiagram
+  autonumber
+  Alice->>John: Hello John, how are you?
+  loop Healthcheck
+      John->>John: Fight against hypochondria
+  end
+  Note right of John: Rational thoughts!
+  John-->>Alice: Great!
+  John->>Bob: How about you?
+  Bob-->>John: Jolly good!
+```
+
+
+
+
+
+### 三、甘特图语法
+
+基本语法：
+
+- 使用 mermaid 解析语言，在开头使用关键字 gantt 指明
+
+- deteFormat 格式 指明日期的显示格式
+
+- title 标题 设置图标的标题
+
+- section 描述 定义纵向上的一个环节
+
+- 定义步骤：每个步骤有两种状态 done（已完成）/ active（执行中）
+
+  - 描述: 状态,id,开始日期,结束日期/持续时间
+  - 描述: 状态[,id],after id2,持续时间
+  - crit ：可用于标记该步骤需要被修正，将高亮显示
+  - 如果不指定具体的开始时间或在某个步骤之后，将默认依次顺序排列
+
+例子：
+
+```
+gantt
+dateFormat YYYY-MM-DD
+title 软件开发甘特图
+section 设计
+需求:done,des1, 2019-01-06,2019-01-08
+原型:active,des2, 2019-01-09, 3d
+UI设计:des3, after des2, 5d
+未来任务:des4, after des3, 5d
+
+section 开发
+学习准备理解需求:crit, done, 2019-01-06,24h
+设计框架:crit, done, after des2, 2d
+开发:crit, active, 3d
+未来任务:crit, 5d
+休息时间:2d
+
+section 测试
+功能测试:active, a1, after des3, 3d
+压力测试:after a1, 20h
+测试报告: 48h
+```
+
+
+
+```mermaid
+gantt
+dateFormat YYYY-MM-DD
+title 软件开发甘特图
+section 设计
+需求:done,des1, 2019-01-06,2019-01-08
+原型:active,des2, 2019-01-09, 3d
+UI设计:des3, after des2, 5d
+未来任务:des4, after des3, 5d
+
+section 开发
+学习准备理解需求:crit, done, 2019-01-06,24h
+设计框架:crit, done, after des2, 2d
+开发:crit, active, 3d
+未来任务:crit, 5d
+休息时间:2d
+
+section 测试
+功能测试:active, a1, after des3, 3d
+压力测试:after a1, 20h
+测试报告: 48h
+```
+
+> **提示：**想了解更多，请查看**流程图**[语法][3]以及**时序图**[语法][4]。
+
+
 
 
 ## 印象笔记相关
@@ -117,21 +302,6 @@ Bob-->Alice: I am good thanks!
 插入图片    `Ctrl + G`
 插入链接    `Ctrl + L`
 提升标题    `Ctrl + H`
-
-## 关于收费
-
-**马克飞象**为新用户提供 10 天的试用期，试用期过后需要[续费](maxiang.info/vip.html)才能继续使用。未购买或者未及时续费，将不能同步新的笔记。之前保存过的笔记依然可以编辑。
-
-
-## 反馈与建议
-- 微博：[@马克飞象](http://weibo.com/u/2788354117)，[@GGock](http://weibo.com/ggock "开发者个人账号")
-- 邮箱：<hustgock@gmail.com>
-
----------
-感谢阅读这份帮助文档。请点击右上角，绑定印象笔记账号，开启全新的记录与分享体验吧。
-
-
-
 
 [^demo]: 这是一个示例脚注。请查阅 [MultiMarkdown 文档](https://github.com/fletcher/MultiMarkdown/wiki/MultiMarkdown-Syntax-Guide#footnotes) 关于脚注的说明。 **限制：** 印象笔记的笔记内容使用 [ENML][5] 格式，基于 HTML，但是不支持某些标签和属性，例如id，这就导致`脚注`和`TOC`无法正常点击。
 

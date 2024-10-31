@@ -19,7 +19,7 @@ body {
     line-height: 1.6rem;
     letter-spacing: 0;
     margin: 0;
-    overflow-x: hidden;
+    /*  overflow-x: hidden; */
 }
 
 #write {
@@ -333,7 +333,7 @@ tt {
     color: #e96900;
 }
 
-/* heighlight. */
+#/* heighlight. 
 #write mark {
     background-color: #EBFFEB;
     border-radius: 2px;
@@ -455,7 +455,7 @@ tt {
     top: 10px;
 }
 
-/** focus mode */
+# /** focus mode 
 
 .on-focus-mode blockquote {
     border-left-color: rgba(85, 85, 85, 0.12);
