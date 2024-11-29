@@ -163,16 +163,14 @@ nav:
         - DEV/Programming/Cpp/stack.md
         - DEV/Programming/Cpp/final.md
         - DEV/Programming/Cpp/oj.md
-  - 研究:
-    - RESEARCH/index.md
-    - CG:
-      - RESEARCH/CG/games101.md
-    - GPU:
-      - RESEARCH/Gpu/gpu.md
+  - 工作:
+    - WORK/index.md
+    - 福耀:
+      - WORK/FYUST/index.md
   - 随笔:
     - ESSAY/index.md
     - 随笔记:
-      - Jottings/index.md
+      - ESSAY/Jottings/shortVideo1.md
     - 文章:
       - ESSAY/Articles/240411-homeinn-experiences.md
   - 转载:
