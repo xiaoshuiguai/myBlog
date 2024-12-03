@@ -13,3 +13,8 @@ http://portal.fyust.org.cn/pms/
   http://10.10.192.24:30292/pms/
 
 
+
+`废`：
+
+http://211.143.198.30:5021
+

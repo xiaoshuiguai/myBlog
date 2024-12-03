@@ -22,9 +22,11 @@ nav:
     - ME/daily-necessities.md
     - ME/support.md
   - 待办:
+    - TODOS/index.md
     - TODOS:
       - TODOS/2410.md
       - TODOS/2411.md   
+      - TODOS/2412.md   
   - 讲稿:
     - LECTURE/index.md
     - Linux:
@@ -170,7 +172,7 @@ nav:
   - 随笔:
     - ESSAY/index.md
     - 随笔记:
-      - ESSAY/Jottings/shortVideo1.md
+      - ESSAY/Jottings/index.md
     - 文章:
       - ESSAY/Articles/240411-homeinn-experiences.md
   - 转载:
