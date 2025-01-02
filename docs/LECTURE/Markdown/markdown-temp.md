@@ -31,11 +31,28 @@ class SomeClass:
 >>> message = '''interpreter
 ... prompt'''
 ```
-### LaTeX 公式
+### LaTeX 公式 [6] 
 
-可以创建行内公式，例如 $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$。或者块级公式：
+
+可以创建行内公式，例如 $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$，$x^2 + 2x + 5 + \sqrt x = 0$
+
+或者块级公式：
 
 $$	x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
+
+<!-- 麦克斯韦方程组 -->
+$$
+\begin{array}{lll}
+\nabla\times E &=& -\;\frac{\partial{B}}{\partial{t}}   
+\ \nabla\times H &=& \frac{\partial{D}}{\partial{t}}+J   
+\ \nabla\cdot D &=& \rho
+\ \nabla\cdot B &=& 0
+\ \end{array}
+$$
+
+
+
+
 
 ### 表格
 | Item      |    Value | Qty  |
@@ -129,7 +146,16 @@ D -.yes.-> E((休息))
 D -.no.-> C
 E --> F(吃饭)
 ```
-
+```mermaid
+graph LR
+emperor((朱八八))-.子.->朱五四-.子.->朱四九-.子.->朱百六
+朱雄英--长子-->朱标--长子-->emperor
+emperor2((朱允炆))--次子-->朱标
+朱樉--次子-->emperor
+朱棡--三子-->emperor
+emperor3((朱棣))--四子-->emperor
+emperor4((朱高炽))--长子-->emperor3
+```
 
 
 ### 二、时序图语法
@@ -257,6 +283,29 @@ section 测试
 测试报告: 48h
 ```
 
+### 四、饼图语法
+
+例子：
+
+```
+pie
+    title 为什么总是宅在家里？
+    "喜欢宅" : 45
+    "天气太热" : 70
+    "穷" : 500
+	"关你屁事" : 95
+```
+
+```mermaid
+pie
+    title 为什么总是宅在家里？
+    "喜欢宅" : 45
+    "天气太热" : 70
+    "穷" : 500
+	"关你屁事" : 95
+```
+
+
 > **提示：**想了解更多，请查看**流程图**[语法][3]以及**时序图**[语法][4]。
 
 
@@ -311,3 +360,6 @@ section 测试
 [3]: http://adrai.github.io/flowchart.js/
 [4]: http://bramp.github.io/js-sequence-diagrams/
 [5]: https://dev.yinxiang.com/doc/articles/enml.php
+
+[6]:https://www.wolai.com/wolai/egjDbHiAfGfJmwR972fcEW
+
