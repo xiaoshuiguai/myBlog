@@ -80,6 +80,7 @@ nav:
 # [UI]
 # [top]
 theme:
+  # pip install mkdocs-material
   name: material
   # [切换日间模式和夜间模式]
   # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-palette-toggle
@@ -175,7 +176,8 @@ plugins:
   # https://squidfunk.github.io/mkdocs-material/plugins/tags/#meta.tags
   - tags
 markdown_extensions:
-  # [任务列表支持]
+  # pip install pymdown-extensions
+  # [任务列表支持] 
   # https://afeiroom.github.io/work/notes/mkdocs/tasklist/
   - def_list
   - pymdownx.tasklist:
