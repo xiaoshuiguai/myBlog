@@ -1,4 +1,4 @@
-# 杨希杰的个人网站
+# 小水怪的个人网站
 
 <https://xiaoshuiguai.github.io>
 
